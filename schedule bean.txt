@@ -1,0 +1,100 @@
+package com.dsrc.project.beans;
+
+import java.sql.Time;
+import java.util.*;
+import javax.persistence.*;
+
+@Entity
+@Table(name="schedule")
+public class Schedule {
+	
+	@Id
+	@GeneratedValue
+	@Column(name="scheduleid")
+	private int scheduleId;
+	@Column(name="busno")
+	private String busNo;
+	@Column(name="source")
+	private String source;
+	@Column(name="destination")
+    private String destination;
+	@Column(name="datescheduled")
+    private String dateScheduled;
+	@Column(name="timescheduled")
+    private String timeScheduled;
+	@Column(name="availseats")
+    private int availSeats;
+	@Column(name="fare")
+    private int fare;
+	
+	
+	public Schedule() {
+		super();
+	}
+	public Schedule(String busNo, String source, String destination, String dateScheduled,
+			String timeScheduled, int availSeats, int fare) {
+		super();
+		this.busNo = busNo;
+		this.source = source;
+		this.destination = destination;
+		this.dateScheduled = dateScheduled;
+		this.timeScheduled = timeScheduled;
+		this.availSeats = availSeats;
+		this.fare = fare;
+	}
+	@Override
+	public String toString() {
+		return "Schedule [scheduleId=" + scheduleId + ", busNo=" + busNo + ", source=" + source + ", destination="
+				+ destination + ", dateScheduled=" + dateScheduled + ", timeScheduled=" + timeScheduled
+				+ ", availSeats=" + availSeats + ", fare=" + fare + "]";
+	}
+	public int getScheduleId() {
+		return scheduleId;
+	}
+	public void setScheduleId(int scheduleId) {
+		this.scheduleId = scheduleId;
+	}
+	public String getBusNo() {
+		return busNo;
+	}
+	public void setBusNo(String busNo) {
+		this.busNo = busNo;
+	}
+	public String getSource() {
+		return source;
+	}
+	public void setSource(String source) {
+		this.source = source;
+	}
+	public String getDestination() {
+		return destination;
+	}
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+	public String getDateScheduled() {
+		return dateScheduled;
+	}
+	public void setDateScheduled(String dateScheduled) {
+		this.dateScheduled = dateScheduled;
+	}
+	public String getTimeScheduled() {
+		return timeScheduled;
+	}
+	public void setTimeScheduled(String timeScheduled) {
+		this.timeScheduled = timeScheduled;
+	}
+	public int getAvailSeats() {
+		return availSeats;
+	}
+	public void setAvailSeats(int availSeats) {
+		this.availSeats = availSeats;
+	}
+	public int getFare() {
+		return fare;
+	}
+	public void setFare(int fare) {
+		this.fare = fare;
+	}
+    
+}
